@@ -64,18 +64,21 @@ const Navbar = () => {
             <Link
               href="/services"
               className="block text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/about"
               className="block text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
               className="block text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Contact Us
             </Link>
