@@ -24,14 +24,14 @@ const values = [
 
 export default function About() {
   return (
-    <main className="pt-24 pb-16 px-4">
+    <main className="pt-24 pb-16 px-4 bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-50">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title="About MonfyMedia"
           subtitle="Transforming businesses through digital excellence"
         />
 
-        <div className="prose max-w-3xl mx-auto mb-16">
+        <div className="prose max-w-3xl mx-auto mb-16 bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
           <p className="text-lg text-gray-600 mb-6">
             MonfyMedia is a leading digital consultancy firm specializing in
             helping businesses navigate the complex digital landscape. With
@@ -46,14 +46,19 @@ export default function About() {
           </p>
         </div>
 
-        <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Our Values
+        </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {values.map((value) => (
-            <div key={value.title} className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                {<value.icon className="h-8 w-8 text-blue-600" />}
+            <div
+              key={value.title}
+              className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                {<value.icon className="h-8 w-8 text-white" />}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+              <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
               <p className="text-gray-600">{value.description}</p>
             </div>
           ))}
