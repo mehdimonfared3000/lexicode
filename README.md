@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+//
+You can directly apply changes to your database using the drizzle-kit push command. This is a convenient method for quickly testing new schema designs or modifications in a local development environment, allowing for rapid iterations without the need to manage migration files:
+
+npx drizzle-kit push
+
+//
+Alternatively, you can generate migrations using the drizzle-kit generate command and then apply them using the drizzle-kit migrate command:
+
+Generate migation files
+npx drizzle-kit generate
+
+apply migrations
+npx drizzle-kit migrate
