@@ -12,6 +12,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        destructive: "var(--destructive)",
+        "primary-foreground": "var(--primary-foreground)",
+        "secondary-foreground": "var(--secondary-foreground)",
+        "destructive-foreground": "var(--destructive-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
       },
       borderRadius: {
         lg: "var(--radius)",

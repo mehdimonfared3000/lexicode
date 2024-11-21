@@ -6,6 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --default: #fff;
+  --primary: blue;
+  --secondary: green;
+  --destructive: #f00;
+  --radius: 0.5rem;
+  --background: #fff;
+  --primary-foreground: #fff;
+  --secondary-foreground: #fff;
+  --destructive-foreground: #fff;
+  --accent-foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +23,15 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --default: #fff;
+    --primary: #fff;
+    --secondary: green;
+    --destructive: #f00;
+    --background: #000;
+    --primary-foreground: #000;
+    --secondary-foreground: #000;
+    --destructive-foreground: #000;
+    --accent-foreground: #000;
   }
 }
 

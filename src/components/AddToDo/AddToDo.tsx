@@ -16,8 +16,10 @@ export function AddToDo({ createTodo }: Props) {
 
   // Event handler for adding a new todo
   const handleAdd = async () => {
-    createTodo(input);
-    setInput("");
+    if (input.trim()) {
+      createTodo(input);
+      setInput("");
+    }
   };
 
   // Rendering the AddTodo component
