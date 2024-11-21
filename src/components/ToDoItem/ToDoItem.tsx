@@ -17,49 +17,34 @@ export function TodoItem({
   toggleIsTodoDone,
   deleteTodoItem,
 }: TodoItemProps) {
-  // State for handling editing mode
   const [editing, setEditing] = useState(false);
 
-  // State for handling text input
   const [text, setText] = useState(todo.task);
 
-  // State for handling "done" status
   const [isDone, setIsDone] = useState(todo.completed);
 
-  // Event handler for text input change
   const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
 
-  // Event handler for toggling "done" status
   const handleIsDone = async () => {
     toggleIsTodoDone(todo.id, !isDone);
     setIsDone((prev) => !prev);
   };
 
-  // Event handler for initiating the edit mode
   const handleEdit = () => {
     setEditing(true);
   };
 
-  // Event handler for saving the edited text
   const handleSave = async () => {
     changeTodoText(todo.id, text);
     setEditing(false);
   };
 
-  // Event handler for canceling the edit mode
-  const handleCancel = () => {
-    setEditing(false);
-    setText(todo.task);
-  };
-
-  // Event handler for deleting a todo item
   const handleDelete = () => {
     deleteTodoItem(todo.id);
   };
 
-  // Rendering the Todo component
   return (
     <div className="flex items-center gap-2 p-4 border-gray-200 border-solid border rounded-lg">
       <input
