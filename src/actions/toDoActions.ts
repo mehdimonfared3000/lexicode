@@ -5,8 +5,13 @@ import { db } from "../lib/db/db";
 import { toDoListTable } from "../lib/db/schema";
 
 export const getData = async () => {
-  const data = await db.select().from(toDoListTable);
-  return data;
+  try {
+    const data = await db.select().from(toDoListTable);
+    console.log("data", data);
+    return data;
+  } catch (e) {
+    throw new Error("Failed to fetch data", { cause: e });
+  }
 };
 
 export const addTodo = async ({
