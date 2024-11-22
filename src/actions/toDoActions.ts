@@ -29,14 +29,14 @@ export const addTodo = async ({
     })
     .returning();
 
-  revalidatePath("/");
+  revalidatePath("/tasks");
   return todoItem;
 };
 
 export const deleteTodo = async ({ id }: { id: number }) => {
   await db.delete(toDoListTable).where(eq(toDoListTable.id, id));
 
-  revalidatePath("/");
+  revalidatePath("/tasks");
 };
 
 export const toggleTodo = async ({ id }: { id: number }) => {
@@ -47,7 +47,7 @@ export const toggleTodo = async ({ id }: { id: number }) => {
     })
     .where(eq(toDoListTable.id, id));
 
-  revalidatePath("/");
+  revalidatePath("/tasks");
 };
 
 export const editTodo = async ({ id, task }: { id: number; task: string }) => {
@@ -58,5 +58,5 @@ export const editTodo = async ({ id, task }: { id: number; task: string }) => {
     })
     .where(eq(toDoListTable.id, id));
 
-  revalidatePath("/");
+  revalidatePath("/tasks");
 };
