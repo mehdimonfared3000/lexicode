@@ -29,6 +29,7 @@ export const addTodo = async ({
     })
     .returning();
 
+  revalidatePath("/");
   return todoItem;
 };
 
