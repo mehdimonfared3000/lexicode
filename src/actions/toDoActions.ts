@@ -7,7 +7,6 @@ import { toDoListTable } from "../lib/db/schema";
 export const getData = async () => {
   try {
     const data = await db.select().from(toDoListTable);
-    console.log("data", data);
     return data;
   } catch (e) {
     throw new Error("Failed to fetch data", { cause: e });
@@ -21,7 +20,7 @@ export const addTodo = async ({
   task: string;
   completed: boolean;
 }) => {
-  const todoItem = await db
+  const [todoItem] = await db
     .insert(toDoListTable)
     .values({
       task,
@@ -34,7 +33,13 @@ export const addTodo = async ({
 };
 
 export const deleteTodo = async ({ id }: { id: number }) => {
-  await db.delete(toDoListTable).where(eq(toDoListTable.id, id));
+  try {
+    await db.delete(toDoListTable).where(eq(toDoListTable.id, id));
+  } catch (e) {
+    return {
+      error: `Something went wrong when trying to delete the to do with id ${id}, error: ${e}`,
+    };
+  }
 
   revalidatePath("/tasks");
 };

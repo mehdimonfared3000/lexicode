@@ -11,7 +11,7 @@ interface TodoItemProps {
   deleteTodoItem: (id: number) => void;
 }
 
-export function TodoItem({
+export function ToDoItem({
   todo,
   changeTodoText,
   toggleIsTodoDone,
